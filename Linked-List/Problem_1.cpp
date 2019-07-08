@@ -29,8 +29,11 @@ int main()
         newNode->data = readData;
         newNode->next = NULL;
 
+        // head는 맨 처음 정해지고 변하지 않는다.
         if(head == NULL)
             head = newNode;
+
+        // tail은 계속 새로운 Node로 변경된다.
         else
             tail->next = newNode;
 
@@ -65,6 +68,7 @@ int main()
         cout << head->data << "을 삭제합니다." << endl;
         free(delNode);
 
+        // 맨 앞에서부터 차례대로 Node를 삭제한다.
         while(delNextNode != NULL){
             delNode = delNextNode;
             delNextNode = delNextNode->next;
